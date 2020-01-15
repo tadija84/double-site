@@ -79,15 +79,42 @@ function setQuote() {
   counter1++;
 }
 
-
 var slidePictures = [
-  { picTitle: "Naziv usluge", picSourse: "./materijal/slikeProjekata1.png", id:1 },
-  { picTitle: "Naziv usluge", picSourse: "./materijal/slikeProjekata2.png", id:2 },
-  { picTitle: "Ili klijenta", picSourse: "./materijal/slikeProjekata3.png", id:3 },
-  { picTitle: "Ili projekta", picSourse: "./materijal/slikeProjekata4.png", id:4},
-  { picTitle: "Ili kampanje", picSourse: "./materijal/slikeProjekata5.png", id:5},
-  { picTitle: "Vrsta proizvoda", picSourse: "./materijal/slikeProjekata6.png", id:6},
-  { picTitle: "Grad ili mesto", picSourse: "./materijal/slikeProjekata7.png", id:7}
+  {
+    picTitle: "Naziv usluge",
+    picSourse: "./materijal/slikeProjekata1.png",
+    id: 1
+  },
+  {
+    picTitle: "Naziv usluge",
+    picSourse: "./materijal/slikeProjekata2.png",
+    id: 2
+  },
+  {
+    picTitle: "Ili klijenta",
+    picSourse: "./materijal/slikeProjekata3.png",
+    id: 3
+  },
+  {
+    picTitle: "Ili projekta",
+    picSourse: "./materijal/slikeProjekata4.png",
+    id: 4
+  },
+  {
+    picTitle: "Ili kampanje",
+    picSourse: "./materijal/slikeProjekata5.png",
+    id: 5
+  },
+  {
+    picTitle: "Vrsta proizvoda",
+    picSourse: "./materijal/slikeProjekata6.png",
+    id: 6
+  },
+  {
+    picTitle: "Grad ili mesto",
+    picSourse: "./materijal/slikeProjekata7.png",
+    id: 7
+  }
 ];
 document.getElementById("leftArrow").addEventListener("click", goLeft);
 document.getElementById("rightArrow").addEventListener("click", goRight);
@@ -101,32 +128,41 @@ function goRight() {
   var thirdPic = document.getElementById("thirdPicDiv");
   var fourthPic = document.getElementById("fourthPicDiv");
   var lastPic = document.getElementById("lastPicDiv");
-  var picT1=document.getElementById("firstPicTitle");
-  var picT2=document.getElementById("secondPicTitle");
-  var picT3=document.getElementById("thirdPicTitle");
-  var picT4=document.getElementById("fourthPicTitle");
+  var picT1 = document.getElementById("firstPicTitle");
+  var picT2 = document.getElementById("secondPicTitle");
+  var picT3 = document.getElementById("thirdPicTitle");
+  var picT4 = document.getElementById("fourthPicTitle");
 
   firstPic.style.backgroundImage =
     "url(" + slidePictures[counter2].picSourse + ")";
-    firstPic.setAttribute("class",slidePictures[counter2].id);
+  firstPic.setAttribute("class", slidePictures[counter2].id);
   secondPic.style.backgroundImage =
     "url(" + slidePictures[findCountRight(counter2, 1)].picSourse + ")";
-    secondPic.setAttribute("class",slidePictures[findCountRight(counter2, 1)].id);
+  secondPic.setAttribute(
+    "class",
+    slidePictures[findCountRight(counter2, 1)].id
+  );
   thirdPic.style.backgroundImage =
     "url(" + slidePictures[findCountRight(counter2, 2)].picSourse + ")";
-    secondPic.setAttribute("class",slidePictures[findCountRight(counter2, 2)].id);
+  secondPic.setAttribute(
+    "class",
+    slidePictures[findCountRight(counter2, 2)].id
+  );
   fourthPic.style.backgroundImage =
     "url(" + slidePictures[findCountRight(counter2, 3)].picSourse + ")";
-    fourthPic.setAttribute("class",slidePictures[findCountRight(counter2, 3)].id);
+  fourthPic.setAttribute(
+    "class",
+    slidePictures[findCountRight(counter2, 3)].id
+  );
   lastPic.style.backgroundImage =
     "linear-gradient( to right, transparent, white), url(" +
     slidePictures[findCountRight(counter2, 4)].picSourse +
     ")";
-    lastPic.setAttribute("class",slidePictures[findCountRight(counter2, 4)].id);
-    picT1.innerHTML=slidePictures[counter2].picTitle;
-    picT2.innerHTML=slidePictures[findCountRight(counter2, 1)].picTitle;
-    picT3.innerHTML=slidePictures[findCountRight(counter2, 2)].picTitle;
-    picT4.innerHTML=slidePictures[findCountRight(counter2, 3)].picTitle;
+  lastPic.setAttribute("class", slidePictures[findCountRight(counter2, 4)].id);
+  picT1.innerHTML = slidePictures[counter2].picTitle;
+  picT2.innerHTML = slidePictures[findCountRight(counter2, 1)].picTitle;
+  picT3.innerHTML = slidePictures[findCountRight(counter2, 2)].picTitle;
+  picT4.innerHTML = slidePictures[findCountRight(counter2, 3)].picTitle;
   counter2++;
 }
 goRight();
@@ -161,95 +197,87 @@ function goLeft() {
   counter2--;
 }
 var myPics = setInterval(goRight, 5000);
-/*document.getElementById("bigPicWrap").style.backgroundImage =
-  "./materijal/slikeProjekata1.png";*/
-  
-document
-  .getElementById("firstPicDiv")
-  .addEventListener("click", function(){ bigPictureShow(this.style.backgroundImage,this.className); });
-document
-  .getElementById("secondPicDiv")
-  .addEventListener("click", function(){ bigPictureShow(this.style.backgroundImage,this.className); });
-document
-  .getElementById("thirdPicDiv")
-  .addEventListener("click", function(){ bigPictureShow(this.style.backgroundImage,this.className); });
-document
-  .getElementById("fourthPicDiv")
-  .addEventListener("click", function(){ bigPictureShow(this.style.backgroundImage,this.className); });
-document.getElementById("lastPicDiv")
-.addEventListener("click", function(){ bigPictureShow(this.style.backgroundImage,this.className); });
+
+document.getElementById("firstPicDiv").addEventListener("click", function() {
+  bigPictureShow(this.style.backgroundImage);
+});
+document.getElementById("secondPicDiv").addEventListener("click", function() {
+  bigPictureShow(this.style.backgroundImage);
+});
+document.getElementById("thirdPicDiv").addEventListener("click", function() {
+  bigPictureShow(this.style.backgroundImage);
+});
+document.getElementById("fourthPicDiv").addEventListener("click", function() {
+  bigPictureShow(this.style.backgroundImage);
+});
+document.getElementById("lastPicDiv").addEventListener("click", function() {
+  bigPictureShow(this.style.backgroundImage);
+});
 document.getElementById("lastPicDiv").addEventListener("click", goRight);
 
-function bigPictureShow(picUrl, picId) {
-
+function bigPictureShow(picUrl) {
   var bigPicture = document.getElementById("bigPic");
   bigPicture.style.display = "block";
   var picWrap = document.getElementById("bigPicWrap");
   picWrap.style.display = "block";
   picWrap.style.backgroundImage = picUrl;
-
-var newNum=Number(picId)
-
-  var x = newNum-1;
-  
-  if(x<0){
-    x=slidePictures.length;
-  }
-
-  var nId=newNum+1;
-  
-  var leftAr=document.getElementById("slideArrowLeft");
- var rightAr=document.getElementById("slideArrowRight");
-
-
-
- leftAr.addEventListener("click",function(e){
-  event.preventDefault();
-   callNextSl(x);
-  });
-  rightAr.addEventListener("click",function(e){
-    event.preventDefault();
-    callNextSl(nId);
-     });
-
-  
+  console.log(picUrl);
 }
-function callNextSl(x){
-  event.preventDefault();
-  var pr=findPrevious(x);
-  var previous="url("+pr+")";
-  bigPictureShow(previous,x);
-}
+
 document.getElementById("close").addEventListener("click", closeBigPic);
 function closeBigPic() {
   var bigPicture = document.getElementById("bigPic");
   bigPicture.style.display = "none";
 }
-function findPrevious(x){
-  var allPics=slidePictures; 
-  for(var i=0;i<allPics.length-1;i++){
-    if(x==allPics[i].id){
-      console.log(i, x);
-      return allPics[i].picSourse;
-    }
-  }
-}
-function findNext(nId){
-  var allPics=slidePictures; 
-  var x;
-  if(nId>allPics.length){
-    x=1
-  }else{
-    x=nId
-  }
-  for(var i=0;i<allPics.length-1;i++){
-    if(x==allPics[i].id){
-      console.log(i, x);
-      return allPics[i].picSourse;
-    }
-  }
-}
 
+
+var leftAr = document.getElementById("slideArrowLeft");
+var rightAr = document.getElementById("slideArrowRight");
+
+leftAr.addEventListener("click", function() {
+  var picWrap = document.getElementById("bigPicWrap");
+  var tempUrl = picWrap.style.backgroundImage;
+  findPrev(tempUrl);
+});
+rightAr.addEventListener("click", function() {
+  var picWrap = document.getElementById("bigPicWrap");
+  var tempUrl = picWrap.style.backgroundImage;
+  findNext(tempUrl);
+});
+
+function findNext(tempUrl) {
+  var allPics = slidePictures;
+  for (var i = 0; i < allPics.length; i++) {
+    var xUrl = 'url("' + allPics[i].picSourse + '")';
+    var xyUrl='linear-gradient(to right, transparent, white), url("' + allPics[i].picSourse + '")'
+    if (xUrl == tempUrl|| xyUrl==tempUrl) {
+      var ij = i + 1;
+      if (ij > allPics.length - 1) {
+        ij = 0;
+      }
+      callNext(ij);
+    }
+  }
+}
+function findPrev(tempUrl){
+   var allPics = slidePictures;
+  for (var i = 0; i < allPics.length; i++) {
+    var xUrl = 'url("' + allPics[i].picSourse + '")';
+    var xyUrl='linear-gradient(to right, transparent, white), url("' + allPics[i].picSourse + '")'
+    if (xUrl == tempUrl || xyUrl==tempUrl) {
+      var ij = i - 1;
+      if (ij <0 ) {
+        ij = allPics.length - 1;
+      }
+      callNext(ij);
+    }
+  }
+}
+function callNext(ij){
+var allPics = slidePictures;
+var xUrl = 'url("' + allPics[ij].picSourse + '")';
+bigPictureShow(xUrl);
+}
 
 (function() {
   document.getElementById("wraper").addEventListener("mousemove", parallax);
@@ -287,7 +315,3 @@ function findNext(nId){
     elem2.style.backgroundPosition = y;
   }
 })();
-
-
-
-
