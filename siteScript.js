@@ -79,14 +79,15 @@ function setQuote() {
   counter1++;
 }
 
+
 var slidePictures = [
-  "./materijal/slikeProjekata1.png",
-  "./materijal/slikeProjekata2.png",
-  "./materijal/slikeProjekata3.png",
-  "./materijal/slikeProjekata4.png",
-  "./materijal/slikeProjekata5.png",
-  "./materijal/slikeProjekata6.png",
-  "./materijal/slikeProjekata7.png"
+  { picTitle: "Naziv usluge", picSourse: "./materijal/slikeProjekata1.png", id:1 },
+  { picTitle: "Naziv usluge", picSourse: "./materijal/slikeProjekata2.png", id:2 },
+  { picTitle: "Ili klijenta", picSourse: "./materijal/slikeProjekata3.png", id:3 },
+  { picTitle: "Ili projekta", picSourse: "./materijal/slikeProjekata4.png", id:4},
+  { picTitle: "Ili kampanje", picSourse: "./materijal/slikeProjekata5.png", id:5},
+  { picTitle: "Vrsta proizvoda", picSourse: "./materijal/slikeProjekata6.png", id:6},
+  { picTitle: "Grad ili mesto", picSourse: "./materijal/slikeProjekata7.png", id:7}
 ];
 document.getElementById("leftArrow").addEventListener("click", goLeft);
 document.getElementById("rightArrow").addEventListener("click", goRight);
@@ -100,21 +101,37 @@ function goRight() {
   var thirdPic = document.getElementById("thirdPicDiv");
   var fourthPic = document.getElementById("fourthPicDiv");
   var lastPic = document.getElementById("lastPicDiv");
-  firstPic.style.backgroundImage = "url(" + slidePictures[counter2] + ")";
+  var picT1=document.getElementById("firstPicTitle");
+  var picT2=document.getElementById("secondPicTitle");
+  var picT3=document.getElementById("thirdPicTitle");
+  var picT4=document.getElementById("fourthPicTitle");
+
+  firstPic.style.backgroundImage =
+    "url(" + slidePictures[counter2].picSourse + ")";
+    firstPic.setAttribute("class",slidePictures[counter2].id);
   secondPic.style.backgroundImage =
-    "url(" + slidePictures[findCountRight(counter2, 1)] + ")";
+    "url(" + slidePictures[findCountRight(counter2, 1)].picSourse + ")";
+    secondPic.setAttribute("class",slidePictures[findCountRight(counter2, 1)].id);
   thirdPic.style.backgroundImage =
-    "url(" + slidePictures[findCountRight(counter2, 2)] + ")";
+    "url(" + slidePictures[findCountRight(counter2, 2)].picSourse + ")";
+    secondPic.setAttribute("class",slidePictures[findCountRight(counter2, 2)].id);
   fourthPic.style.backgroundImage =
-    "url(" + slidePictures[findCountRight(counter2, 3)] + ")";
+    "url(" + slidePictures[findCountRight(counter2, 3)].picSourse + ")";
+    fourthPic.setAttribute("class",slidePictures[findCountRight(counter2, 3)].id);
   lastPic.style.backgroundImage =
     "linear-gradient( to right, transparent, white), url(" +
-    slidePictures[findCountRight(counter2, 4)] +
+    slidePictures[findCountRight(counter2, 4)].picSourse +
     ")";
+    lastPic.setAttribute("class",slidePictures[findCountRight(counter2, 4)].id);
+    picT1.innerHTML=slidePictures[counter2].picTitle;
+    picT2.innerHTML=slidePictures[findCountRight(counter2, 1)].picTitle;
+    picT3.innerHTML=slidePictures[findCountRight(counter2, 2)].picTitle;
+    picT4.innerHTML=slidePictures[findCountRight(counter2, 3)].picTitle;
   counter2++;
 }
-function findCountRight(x, y) {
-  var z = x + y;
+goRight();
+function findCountRight(xn, yn) {
+  var z = xn + yn;
   if (z > slidePictures.length - 1) {
     z = z - 7;
   }
@@ -129,49 +146,148 @@ function goLeft() {
   var thirdPic = document.getElementById("thirdPicDiv");
   var fourthPic = document.getElementById("fourthPicDiv");
   var lastPic = document.getElementById("lastPicDiv");
-  firstPic.style.backgroundImage = "url(" + slidePictures[counter2] + ")";
+  firstPic.style.backgroundImage =
+    "url(" + slidePictures[counter2].picSourse + ")";
   secondPic.style.backgroundImage =
-    "url(" + slidePictures[findCountRight(counter2, 1)] + ")";
+    "url(" + slidePictures[findCountRight(counter2, 1)].picSourse + ")";
   thirdPic.style.backgroundImage =
-    "url(" + slidePictures[findCountRight(counter2, 2)] + ")";
+    "url(" + slidePictures[findCountRight(counter2, 2)].picSourse + ")";
   fourthPic.style.backgroundImage =
-    "url(" + slidePictures[findCountRight(counter2, 3)] + ")";
+    "url(" + slidePictures[findCountRight(counter2, 3)].picSourse + ")";
   lastPic.style.backgroundImage =
     "linear-gradient( to right, transparent, white), url(" +
-    slidePictures[findCountRight(counter2, 4)] +
+    slidePictures[findCountRight(counter2, 4)].picSourse +
     ")";
   counter2--;
 }
 var myPics = setInterval(goRight, 5000);
-document.getElementById("bigPicWrap").style.backgroundImage="./materijal/slikeProjekata1.png";
-
+/*document.getElementById("bigPicWrap").style.backgroundImage =
+  "./materijal/slikeProjekata1.png";*/
+  
 document
   .getElementById("firstPicDiv")
-  .addEventListener("click", bigPictureShow);
+  .addEventListener("click", function(){ bigPictureShow(this.style.backgroundImage,this.className); });
 document
   .getElementById("secondPicDiv")
-  .addEventListener("click", bigPictureShow);
+  .addEventListener("click", function(){ bigPictureShow(this.style.backgroundImage,this.className); });
 document
   .getElementById("thirdPicDiv")
-  .addEventListener("click", bigPictureShow);
+  .addEventListener("click", function(){ bigPictureShow(this.style.backgroundImage,this.className); });
 document
   .getElementById("fourthPicDiv")
-  .addEventListener("click", bigPictureShow);
-document.getElementById("lastPicDiv").addEventListener("click", bigPictureShow);
+  .addEventListener("click", function(){ bigPictureShow(this.style.backgroundImage,this.className); });
+document.getElementById("lastPicDiv")
+.addEventListener("click", function(){ bigPictureShow(this.style.backgroundImage,this.className); });
 document.getElementById("lastPicDiv").addEventListener("click", goRight);
-function bigPictureShow() {
-  var x = this;
-  if (this == undefined) {
-    x = document.getElementById("firstPicDiv");
-  }
+
+function bigPictureShow(picUrl, picId) {
+
   var bigPicture = document.getElementById("bigPic");
-  bigPicture.style.display = "block"; 
+  bigPicture.style.display = "block";
   var picWrap = document.getElementById("bigPicWrap");
   picWrap.style.display = "block";
-  picWrap.style.backgroundImage = x.style.backgroundImage;
+  picWrap.style.backgroundImage = picUrl;
+
+var newNum=Number(picId)
+
+  var x = newNum-1;
+  
+  if(x<0){
+    x=slidePictures.length;
+  }
+
+  var nId=newNum+1;
+  
+  var leftAr=document.getElementById("slideArrowLeft");
+ var rightAr=document.getElementById("slideArrowRight");
+
+
+
+ leftAr.addEventListener("click",function(e){
+  event.preventDefault();
+   callNextSl(x);
+  });
+  rightAr.addEventListener("click",function(e){
+    event.preventDefault();
+    callNextSl(nId);
+     });
+
+  
+}
+function callNextSl(x){
+  event.preventDefault();
+  var pr=findPrevious(x);
+  var previous="url("+pr+")";
+  bigPictureShow(previous,x);
 }
 document.getElementById("close").addEventListener("click", closeBigPic);
-function closeBigPic(){
+function closeBigPic() {
   var bigPicture = document.getElementById("bigPic");
   bigPicture.style.display = "none";
 }
+function findPrevious(x){
+  var allPics=slidePictures; 
+  for(var i=0;i<allPics.length-1;i++){
+    if(x==allPics[i].id){
+      console.log(i, x);
+      return allPics[i].picSourse;
+    }
+  }
+}
+function findNext(nId){
+  var allPics=slidePictures; 
+  var x;
+  if(nId>allPics.length){
+    x=1
+  }else{
+    x=nId
+  }
+  for(var i=0;i<allPics.length-1;i++){
+    if(x==allPics[i].id){
+      console.log(i, x);
+      return allPics[i].picSourse;
+    }
+  }
+}
+
+
+(function() {
+  document.getElementById("wraper").addEventListener("mousemove", parallax);
+  const elem = document.querySelector("#bigWrap");
+  function parallax(e) {
+    let _w = window.innerWidth / 2;
+    let _h = window.innerHeight / 2;
+    let _mouseX = e.clientX;
+    let _mouseY = e.clientY;
+    let _depth1 = `${10 - (_mouseX - _w) * 0.01}% ${10 -
+      (_mouseY - _h) * 0.01}%`;
+    let _depth2 = `${10 - (_mouseX - _w) * 0.01}% ${10 -
+      (_mouseY - _h) * 0.01}%`;
+    let _depth3 = `${10 - (_mouseX - _w) * 0.03}% ${10 -
+      (_mouseY - _h) * 0.03}%`;
+    let x = `${_depth3}, ${_depth2}, ${_depth1}`;
+    elem.style.backgroundPosition = x;
+  }
+})();
+
+(function() {
+  document.getElementById("wraper").addEventListener("mousemove", parallax2);
+  const elem2 = document.querySelector("#smallWrap");
+  function parallax2(e) {
+    let _w = window.innerWidth / 2;
+    let _h = window.innerHeight / 2;
+    let _mouseX = e.clientX;
+    let _mouseY = e.clientY;
+    let _depth1 = `${50 - (_mouseX - _w) * 0.03}% ${50 -
+      (_mouseY - _h) * 0.01}%`;
+    let _depth2 = `${50 - (_mouseX - _w) * 0.08}% ${50 -
+      (_mouseY - _h) * 0.08}%`;
+    let _depth3 = `${50 - (_mouseX - _w) * 0.1}% ${50 - (_mouseY - _h) * 0.1}%`;
+    var y = `${_depth3}, ${_depth2}, ${_depth1}`;
+    elem2.style.backgroundPosition = y;
+  }
+})();
+
+
+
+
