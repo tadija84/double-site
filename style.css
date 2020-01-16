@@ -2,6 +2,13 @@
   margin: 0;
   font-family: "Roboto", sans-serif;
 }
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+body{
+  
+  overflow-x: hidden;
+}
 @font-face {
   font-family: myFont;
   src: url(./materijal/Roboto-Black.ttf);
@@ -332,7 +339,7 @@ font-size: 1.5em;
 }
 #quoteText {
   background-image: url(./materijal/quotationBorder.png);
-  background-size: 38vw 18vh;
+  background-size: 35vw 18vh;
   background-repeat: no-repeat;
   padding: 2vw;
   width: 35vw;
@@ -536,6 +543,8 @@ grid-template-columns: 25vw 59vw;
 #mapWrap{
   margin-top: 13vh;
   height: 59vw;
-  background-image: url(./materijal/map.png);
-  background-repeat: no-repeat;
+}
+#mapWrap iframe{
+  width: 59vw;
+  height: 80vh;
 }

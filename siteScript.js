@@ -35,13 +35,13 @@ var quotes = [
     oneQuote:
       "Employees of the Agency Headline have excellent client approach, proactive thinking and find the best models of communication, respecting deadlines and never losing patience.",
     oneQuoteAutor:
-      "LJUDMILA JEVTIĆ, SENIOR ADVISOR FOR PR AND MARKETING OTP BANK SERBIA"
+      "LJUDMILA JEVTIĆ, OTP BANK SERBIA"
   },
   {
     oneQuote:
       "It is a pleasure to work with people who are dedicated to their work and who, due to personal traits, make your work responsibilities a pleasure.",
     oneQuoteAutor:
-      "ANĐELINA KUZMANOVIĆ, HEAD OF MARKETING KNAUF INSULATION SOUTHERN BALKANS"
+      "ANĐELINA KUZMANOVIĆ, KNAUF INSULATION SOUTHERN BALKANS"
   },
   {
     oneQuote:
@@ -57,13 +57,13 @@ var quotes = [
     oneQuote:
       "What Tesla is in science. What Messi is in football. What Madonna is in music. What Đokovic is in tennis. That is agency Headline in communication business.",
     oneQuoteAutor:
-      "SLOBODAN ŠARENAC, EDITOR OF SPORT AT NATIONAL BROADCASTER RADIO TELEVISION OF SERBIA"
+      "SLOBODAN ŠARENAC, RADIO TELEVISION OF SERBIA"
   },
   {
     oneQuote:
       "Committed, resourceful, helpful... and very important for us in journalism - accurate and precise in arrangements.",
     oneQuoteAutor:
-      "JULIJANA SIMIĆ, EDITOR OF BELGRADE DEPARTMENT, POLITIKA DAILY"
+      "JULIJANA SIMIĆ, POLITIKA DAILY"
   }
 ];
 var myQuote = setInterval(setQuote, 5000);
