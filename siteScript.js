@@ -12,7 +12,7 @@ function setCountUp() {
   if (counter3 > countDatas.length - 1) {
     counter3 = 0;
   }
-  if(counter4==0){
+  if (counter4 == 0) {
     startFadeIn();
   }
   var firstLineCount = document.getElementById("countFirstLine");
@@ -23,39 +23,39 @@ function setCountUp() {
   countNumbs.innerHTML = counter4;
   counter4++;
   if (counter4 > countDatas[counter3].numData - 1) {
-    
-    if (counter4 > countDatas[counter3].numData + 400){
+    if (counter4 > countDatas[counter3].numData + 200) {
       startFadeOut();
     }
-    if (counter4 > countDatas[counter3].numData + 499) {
+    if (counter4 > countDatas[counter3].numData + 299) {
       counter3++;
       counter4 = 0;
+      firstLineCount.innerHTML = "";
+      lastLineCount.innerHTML = "";
+      countNumbs.innerHTML = "";
     } else {
       countNumbs.innerHTML = countDatas[counter3].numData;
     }
   }
 }
-function startFadeIn(){
-  document.getElementById("numbsWrap").style.animationName="fadeIn";
-  document.getElementById("numbsWrap").style.animationDuration= "1s";
+function startFadeIn() {
+  document.getElementById("numbsWrap").style.animationName = "fadeIn";
+  document.getElementById("numbsWrap").style.animationDuration = "1s";
 }
-function startFadeOut(){
-  document.getElementById("numbsWrap").style.animationName="fadeOut";
-  document.getElementById("numbsWrap").style.animationDuration= "1s";
+function startFadeOut() {
+  document.getElementById("numbsWrap").style.animationName = "fadeOut";
+  document.getElementById("numbsWrap").style.animationDuration = "2s";
 }
 var counter1 = 0;
 var quotes = [
   {
     oneQuote:
       "Employees of the Agency Headline have excellent client approach, proactive thinking and find the best models of communication, respecting deadlines and never losing patience.",
-    oneQuoteAutor:
-      "LJUDMILA JEVTIĆ, OTP BANK SERBIA"
+    oneQuoteAutor: "LJUDMILA JEVTIĆ, OTP BANK SERBIA"
   },
   {
     oneQuote:
       "It is a pleasure to work with people who are dedicated to their work and who, due to personal traits, make your work responsibilities a pleasure.",
-    oneQuoteAutor:
-      "ANĐELINA KUZMANOVIĆ, KNAUF INSULATION SOUTHERN BALKANS"
+    oneQuoteAutor: "ANĐELINA KUZMANOVIĆ, KNAUF INSULATION SOUTHERN BALKANS"
   },
   {
     oneQuote:
@@ -70,14 +70,12 @@ var quotes = [
   {
     oneQuote:
       "What Tesla is in science. What Messi is in football. What Madonna is in music. What Đokovic is in tennis. That is agency Headline in communication business.",
-    oneQuoteAutor:
-      "SLOBODAN ŠARENAC, RADIO TELEVISION OF SERBIA"
+    oneQuoteAutor: "SLOBODAN ŠARENAC, RADIO TELEVISION OF SERBIA"
   },
   {
     oneQuote:
       "Committed, resourceful, helpful... and very important for us in journalism - accurate and precise in arrangements.",
-    oneQuoteAutor:
-      "JULIJANA SIMIĆ, POLITIKA DAILY"
+    oneQuoteAutor: "JULIJANA SIMIĆ, POLITIKA DAILY"
   }
 ];
 var myQuote = setInterval(setQuote, 5000);
@@ -244,7 +242,6 @@ function closeBigPic() {
   bigPicture.style.display = "none";
 }
 
-
 var leftAr = document.getElementById("slideArrowLeft");
 var rightAr = document.getElementById("slideArrowRight");
 
@@ -263,8 +260,11 @@ function findNext(tempUrl) {
   var allPics = slidePictures;
   for (var i = 0; i < allPics.length; i++) {
     var xUrl = 'url("' + allPics[i].picSourse + '")';
-    var xyUrl='linear-gradient(to right, transparent, white), url("' + allPics[i].picSourse + '")'
-    if (xUrl == tempUrl|| xyUrl==tempUrl) {
+    var xyUrl =
+      'linear-gradient(to right, transparent, white), url("' +
+      allPics[i].picSourse +
+      '")';
+    if (xUrl == tempUrl || xyUrl == tempUrl) {
       var ij = i + 1;
       if (ij > allPics.length - 1) {
         ij = 0;
@@ -273,24 +273,27 @@ function findNext(tempUrl) {
     }
   }
 }
-function findPrev(tempUrl){
-   var allPics = slidePictures;
+function findPrev(tempUrl) {
+  var allPics = slidePictures;
   for (var i = 0; i < allPics.length; i++) {
     var xUrl = 'url("' + allPics[i].picSourse + '")';
-    var xyUrl='linear-gradient(to right, transparent, white), url("' + allPics[i].picSourse + '")'
-    if (xUrl == tempUrl || xyUrl==tempUrl) {
+    var xyUrl =
+      'linear-gradient(to right, transparent, white), url("' +
+      allPics[i].picSourse +
+      '")';
+    if (xUrl == tempUrl || xyUrl == tempUrl) {
       var ij = i - 1;
-      if (ij <0 ) {
+      if (ij < 0) {
         ij = allPics.length - 1;
       }
       callNext(ij);
     }
   }
 }
-function callNext(ij){
-var allPics = slidePictures;
-var xUrl = 'url("' + allPics[ij].picSourse + '")';
-bigPictureShow(xUrl);
+function callNext(ij) {
+  var allPics = slidePictures;
+  var xUrl = 'url("' + allPics[ij].picSourse + '")';
+  bigPictureShow(xUrl);
 }
 
 (function() {
