@@ -12,6 +12,9 @@ function setCountUp() {
   if (counter3 > countDatas.length - 1) {
     counter3 = 0;
   }
+  if(counter4==0){
+    startFadeIn();
+  }
   var firstLineCount = document.getElementById("countFirstLine");
   var countNumbs = document.getElementById("numCount");
   var lastLineCount = document.getElementById("countLastLine");
@@ -20,7 +23,11 @@ function setCountUp() {
   countNumbs.innerHTML = counter4;
   counter4++;
   if (counter4 > countDatas[counter3].numData - 1) {
-    if (counter4 > countDatas[counter3].numData + 1000) {
+    
+    if (counter4 > countDatas[counter3].numData + 400){
+      startFadeOut();
+    }
+    if (counter4 > countDatas[counter3].numData + 499) {
       counter3++;
       counter4 = 0;
     } else {
@@ -28,7 +35,14 @@ function setCountUp() {
     }
   }
 }
-
+function startFadeIn(){
+  document.getElementById("numbsWrap").style.animationName="fadeIn";
+  document.getElementById("numbsWrap").style.animationDuration= "1s";
+}
+function startFadeOut(){
+  document.getElementById("numbsWrap").style.animationName="fadeOut";
+  document.getElementById("numbsWrap").style.animationDuration= "1s";
+}
 var counter1 = 0;
 var quotes = [
   {
