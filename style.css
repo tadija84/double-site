@@ -38,6 +38,7 @@ header {
   background-position: center;
   justify-content: center;
   cursor: pointer;
+  background-color: white;
 }
 #secondLogo{
   background-image: url(./materijal/headlineDkitlogo1.png);
@@ -45,12 +46,14 @@ header {
   background-repeat: no-repeat;
   background-position: center;
   justify-content: center;
+  background-color: white;
 }
 #thirdLogo{
   background-image: url(./materijal/dkit2.png);
   background-size: 5.6vw;
   background-repeat: no-repeat;
   background-position: left;
+  background-color: white;
 }
 #thirdLogo:hover{
 background-image: url(./materijal/Dkit.png);
@@ -129,15 +132,16 @@ main {
     position: absolute;
     width: 40%;
     left:30vw;
+    height: 20vh;
     margin-top: 65vh;
     top: 0;
     text-align: center;
-
+    background-color: #a31b00;
     font-weight: 900;
+    padding: 2vh 3vw;
 }
 #movingPart p{
-  border-top: solid #a31b00 3px;
-  border-bottom: solid #a31b00 3px;
+  color: white;
   padding: 2vh 0;
   font-size: 1.5em;
 }
@@ -199,7 +203,8 @@ border-spacing: 50px !important;
   font-size: 1.5em;
   text-align: center;
   background-image: url(./materijal/aboutUsBackground.jpg);
-  background-size: 50vw 90vh;
+  background-size: cover;
+  background-position: center;
 }
 #countsWrap{
   width: 50vw;
@@ -342,17 +347,24 @@ font-size: 1.5em;
 }
 #randomQuote {
   display: grid;
-  grid-template-rows: 20vh 15vh;
-  width: 50vw;
+  grid-template-rows: 23vh 12vh;
   z-index: 5;
-  padding-left: 30vw;
+  margin:0 auto;
 }
 #quoteText {
+  display: grid;
   background-image: url(./materijal/quotationBorder.png);
-  background-size: 35vw 18vh;
+  background-size: 400px 120px;
   background-repeat: no-repeat;
+  background-position: center;
   padding: 2vw;
-  width: 35vw;
+  width: 400px;
+  margin:0 auto;
+  justify-content: center;
+  align-items: center;
+}
+#quoteAutor{
+  margin:0 auto;
 }
 #klijenti {
   display: block;
@@ -560,4 +572,162 @@ grid-template-columns: 25vw 59vw;
   width: 45vw;
   height: 30vw;
   outline: 3px gray solid;
+}
+
+@media only screen and (max-width: 950px) {
+  #tabs{
+    display: grid;
+    grid-template-columns: 12vw 6vw 15vw 8vw 8vw 15vw 10vw 8vw 4vw;
+  }
+  #linkNaslovna,#linkONama,#linkUsluge,#linkKlijenti,#linkKontakt,#linkEngleski{
+    font-size: 0.8em;
+    font-weight: 800;
+    }
+    #movingPart {
+      width: 50%;
+      left:25vw;
+  }
+  #aboutWrap{
+    font-size: 0.9em;
+  }
+  #aboutWrap h1{
+    margin-top: 5vh;
+   }
+ 
+}
+@media only screen and (max-width: 680px){
+  #tabs{
+    grid-template-columns: 10vw 6vw 15vw 8vw 8vw 17vw 12vw 8vw 4vw;
+    font-size: 0.8em;
+  }
+  #aboutWrap{
+    font-size: 0.8em;
+    margin-bottom: 4vh;
+  }
+  #aboutWrap h1{
+    margin-top: 4vh;
+   }
+   #movingPart {
+    position: absolute;
+    width: 320px;
+    margin: 65vh auto 0;
+    text-align: center;
+    font-weight: 900;
+    padding: 2vh 3vw;
+}
+}
+@media only screen and (max-width: 460px){
+  #tabs{
+    display: none;
+    width: 100vw;
+    grid-template-columns: none;
+    grid-template-rows: 10vh 10vh 10vh 10vh 10vh 10vh 10vh 10vh 10vh ;
+    font-size: 1em;
+    margin: 0;
+    left: 0;
+  }
+  #linkNaslovna,#linkONama,#linkUsluge,
+#linkKlijenti,#linkKontakt,#linkEngleski,
+#firstLogo, #secondLogo,#thirdLogo{
+position: relative;
+ width: 100vw;
+ height: 10vh;
+ margin: 0;
+ right: 10vw;
+ justify-content: center;
+  }
+  #thirdLogo{
+    background-position: center;
+  }
+ 
+  #movingPart {
+    position: absolute;
+    width: 100vw;
+    left: 0;
+}#oNama{
+  display: block;
+  min-height: 160vh;
+}
+#aboutText{
+  display: block;
+  justify-content: space-around;
+  margin-left: 2vw;
+  
+}
+#aboutWrap{
+  width: 100%;
+  min-height: 70vh;
+  padding: 3vw;
+  display: grid;
+  justify-content: space-between;
+  color: black;
+}
+#numberCounter{
+  width: 100vw;
+  font-size: 1.5em;
+}
+#countsWrap{
+  width: 100vw;
+  height: 90vh;
+  background-color: rgba(163,27,0,0.7);
+}
+#numbsWrap{
+  color: white;
+  width: 70%;
+  height: 40vh;
+  text-align: right;
+  margin-top: 30vh;
+}
+#slideWrap{
+  grid-template-areas:
+  "headPic headPic "
+  "divPic divPic ";
+  grid-column-gap: 1vw;
+}
+#thirdPicTitle,#fourthPicTitle,#lastPicTitle,#thirdPicDiv,#fourthPicDiv,#lastPicDiv{
+  display: none;
+}
+.oneSliderDiv {
+  height: 30vw;
+  width: 30vw;
+  margin: 5vh auto;
+}
+#clientsContainer {
+  display: grid;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  grid-template-columns: auto auto auto ;
+  justify-content: space-evenly;
+}
+.oneClient {
+  font-size: 30px;
+  text-align: center;
+  width: 25vw;
+  height: 15vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: grayscale(0);
+}
+#contactWrap{
+  margin-left: 8vw;
+  width: 84vw;
+  min-height: 84vh;
+  display: block;
+  }
+  #contactDatas{
+    height: 64vh;
+    display: block;
+  } 
+  #mapWrap{
+    margin-top: 0;
+    height: 80vw;
+    height: 40vw;
+    margin-left: 0;
+    
+  }
+  #mapWrap iframe{
+    width:100%;
+    height: 100%;
+  }
 }
