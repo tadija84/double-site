@@ -6,12 +6,23 @@
   box-sizing: border-box;
 }
 body{
-  
+  width: 100vw;
   overflow-x: hidden;
 }
 @font-face {
   font-family: myFont;
   src: url(./materijal/Roboto-Black.ttf);
+}
+#burgerMenu{
+  display: none;
+  background-image: url(./materijal/burgerMenu.png);
+  position: fixed; 
+  background-position: center;
+  background-size: 15vw 15vw;
+  width: 15vw;
+  height: 15vw;
+  right: 0;
+  top: 0;
 }
 header {
   width: 100vw;
@@ -26,14 +37,15 @@ header {
  padding-right: 8vw;
 }
 #tabs{
-  width: 90vw;
+  width: 86vw;
   height: 8vh;
   display: grid;
-  grid-template-columns: 12vw 6vw 21vw 8vw 6vw 12vw 8vw 8vw 4vw;
+  grid-template-columns: 12vw 6vw 22vw 8vw 6vw 12vw 8vw 8vw 4vw;
   margin: 0;
 }
-#firstLogo{background-image: url(./materijal/headline1.png);
-  background-size: 12vw ;
+#firstLogo{
+  background-image: url(./materijal/headline1.png);
+  background-size: 12vw;
   background-repeat: no-repeat;
   background-position: center;
   justify-content: center;
@@ -81,6 +93,7 @@ a:hover{
 
 main {
   display: block;
+  width: 100%;
 }
 #wraper {
   display: flex;
@@ -127,22 +140,27 @@ main {
   background-position: center;
   background-position: 50% 50%;
 }
+
 #movingPart {
-    color: #a31b00;
-    position: absolute;
-    width: 40%;
-    left:30vw;
-    height: 20vh;
-    margin-top: 65vh;
-    top: 0;
-    text-align: center;
-    background-color: #a31b00;
-    font-weight: 900;
-    padding: 2vh 3vw;
+  color: #a31b00;
+  position: absolute;
+  width: 70vw;
+  left:15vw;
+  height: 20vh;
+  margin-top: 65vh;
+  top: 0;
+  text-align: center;
+  font-weight: 900;
+  padding:0 6vw;
+  background-image: url(./materijal/textbackround.png);
+  background-size: 70vw 20vh;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 #movingPart p{
+  width: 50vw;
   color: white;
-  padding: 2vh 0;
+  padding: 0;
   font-size: 1.5em;
 }
 #movingPart h1,
@@ -171,7 +189,7 @@ main {
 #aboutText{
   display: block;
   justify-content: space-around;
-  margin-left: 8vw;
+  padding-left: 8vw;
   
 }
 #aboutWrap{
@@ -319,7 +337,6 @@ font-size: 1.5em;
   background-image: url(./materijal/slikeProjekata4.png);
 }
 #lastPicDiv {
-  
   background-size: cover;
   background-image: linear-gradient(to right, transparent, white),
     url(./materijal/slikeProjekata5.png);
@@ -348,6 +365,7 @@ font-size: 1.5em;
 #randomQuote {
   display: grid;
   grid-template-rows: 23vh 12vh;
+  grid-template-columns: 75vw;
   z-index: 5;
   margin:0 auto;
 }
@@ -538,11 +556,11 @@ font-size: 1.5em;
   padding-top: 5vh;
 }
 #contactWrap{
-margin-left: 8vw;
-width: 84vw;
-height: 84vh;
-display: grid;
-grid-template-columns: 25vw 59vw;
+  margin-left: 8vw;
+  width: 84vw;
+  height: 84vh;
+  display: grid;
+  grid-template-columns: 25vw 59vw;
 }
 #contactDatas{
   height: 84vh;
@@ -583,10 +601,7 @@ grid-template-columns: 25vw 59vw;
     font-size: 0.8em;
     font-weight: 800;
     }
-    #movingPart {
-      width: 50%;
-      left:25vw;
-  }
+ 
   #aboutWrap{
     font-size: 0.9em;
   }
@@ -606,114 +621,183 @@ grid-template-columns: 25vw 59vw;
   }
   #aboutWrap h1{
     margin-top: 4vh;
-   }
-   #movingPart {
+  }
+  #movingPart {
     position: absolute;
-    width: 320px;
+    width: 350px;
     margin: 65vh auto 0;
     text-align: center;
     font-weight: 900;
-    padding: 2vh 3vw;
-}
+    padding: 0 3vw;
+  }
 }
 @media only screen and (max-width: 460px){
+  #burgerMenu{
+    display: block;
+    z-index: 15;
+  }
+  header{
+    display: none;  
+  }
   #tabs{
     display: none;
     width: 100vw;
-    grid-template-columns: none;
-    grid-template-rows: 10vh 10vh 10vh 10vh 10vh 10vh 10vh 10vh 10vh ;
+    grid-template-areas: 
+    "firstLogo firstLogo firstLogo secondLogo thirdLogo thirdLogo thirdLogo"
+    "naslovna naslovna naslovna naslovna naslovna naslovna naslovna"
+    "oNama oNama oNama oNama oNama oNama oNama"
+    "usluge usluge usluge usluge usluge usluge usluge"
+    "klijenti klijenti klijenti klijenti klijenti klijenti klijenti"
+    "kontakt kontakt kontakt kontakt kontakt kontakt kontakt"
+    "engleski engleski engleski engleski engleski engleski engleski";
+    /*grid-template-columns: none;
+    grid-template-rows: 10vh 10vh 10vh 10vh 10vh 10vh 10vh 10vh 10vh ;*/
     font-size: 1em;
     margin: 0;
     left: 0;
   }
-  #linkNaslovna,#linkONama,#linkUsluge,
-#linkKlijenti,#linkKontakt,#linkEngleski,
-#firstLogo, #secondLogo,#thirdLogo{
-position: relative;
- width: 100vw;
- height: 10vh;
- margin: 0;
- right: 10vw;
- justify-content: center;
+  #firstLogo{
+    grid-area: firstLogo;
+    width: 45vw;
+    position: relative;
+    float: left;
+    height: 10vh;
+    margin: 0;
+    right: 10vw;
+    justify-content: center;
+  }
+  #secondLogo{
+    grid-area: secondLogo;
+    width: 10vw;
+    position: relative;
+    height: 10vh;
+    margin: 0;
+    right: 10vw;
+    justify-content: center;
+    float: left;
   }
   #thirdLogo{
+    grid-area: thirdLogo;
+    width: 45vw;
+    position: relative;
+    height: 10vh;
+    margin: 0;
+    right: 10vw;
+    justify-content: center;
+    float: left;
     background-position: center;
   }
- 
+  #linkNaslovna{
+    grid-area: naslovna;
+  }
+  #linkONama{
+    grid-area: oNama;
+  }
+  #linkUsluge{
+    grid-area:usluge
+  }
+  #linkKlijenti{
+    grid-area:klijenti
+  }
+  #linkKontakt{
+    grid-area: kontakt
+  }
+  #linkEngleski{
+    grid-area: engleski;
+  }
+  #linkNaslovna,#linkONama,#linkUsluge,
+  #linkKlijenti,#linkKontakt,#linkEngleski{
+    clear: both;
+    position: relative;
+    width: 100vw;
+    height: 10vh;
+    margin: 0;
+    right: 10vw;
+    justify-content: center;
+  }
+  #wraper{ 
+    padding-top: 0;
+ }
   #movingPart {
     position: absolute;
     width: 100vw;
+    background-size: 100vw 20vh;
     left: 0;
-}#oNama{
-  display: block;
-  min-height: 160vh;
-}
-#aboutText{
-  display: block;
-  justify-content: space-around;
-  margin-left: 2vw;
-  
-}
-#aboutWrap{
-  width: 100%;
-  min-height: 70vh;
-  padding: 3vw;
-  display: grid;
-  justify-content: space-between;
-  color: black;
-}
-#numberCounter{
-  width: 100vw;
-  font-size: 1.5em;
-}
-#countsWrap{
-  width: 100vw;
-  height: 90vh;
-  background-color: rgba(163,27,0,0.7);
-}
-#numbsWrap{
-  color: white;
-  width: 70%;
-  height: 40vh;
-  text-align: right;
-  margin-top: 30vh;
-}
-#slideWrap{
-  grid-template-areas:
-  "headPic headPic "
-  "divPic divPic ";
-  grid-column-gap: 1vw;
-}
-#thirdPicTitle,#fourthPicTitle,#lastPicTitle,#thirdPicDiv,#fourthPicDiv,#lastPicDiv{
-  display: none;
-}
-.oneSliderDiv {
-  height: 30vw;
-  width: 30vw;
-  margin: 5vh auto;
-}
-#clientsContainer {
-  display: grid;
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
-  grid-template-columns: auto auto auto auto auto auto auto;
-  grid-template-columns: auto auto auto ;
-  justify-content: space-evenly;
-}
-.oneClient {
-  font-size: 30px;
-  text-align: center;
-  width: 25vw;
-  height: 15vw;
-  background-repeat: no-repeat;
-  background-size: contain;
-  filter: grayscale(0);
-}
-#contactWrap{
-  margin-left: 8vw;
-  width: 84vw;
-  min-height: 84vh;
-  display: block;
+    font-size: 0.9em;
+    padding:0 5vw;
+  }
+  #oNama{
+    display: block;
+    min-height: 160vh;
+  }
+  #aboutText{
+    display: block;
+    justify-content: space-around;
+    margin-left: 2vw; 
+  }
+  #aboutWrap{
+    width: 100%;
+    min-height: 70vh;
+    padding: 3vw;
+    display: grid;
+    justify-content: space-between;
+    color: black;
+  }
+  #numberCounter{
+    width: 100vw;
+    font-size: 1.5em;
+  }
+  #countsWrap{
+    width: 100vw;
+    height: 90vh;
+    background-color: rgba(163,27,0,0.7);
+  }
+  #numbsWrap{
+    color: white;
+    width: 70%;
+    height: 40vh;
+    text-align: right;
+    margin-top: 30vh;
+  }
+  #slideWrap{
+    grid-template-areas:
+    "headPic headPic "
+    "divPic divPic ";
+    grid-column-gap: 1vw;
+  }
+  #thirdPicTitle,#fourthPicTitle,#lastPicTitle,#thirdPicDiv,#fourthPicDiv,#lastPicDiv{
+    display: none;
+  }
+  .oneSliderDiv {
+    height: 30vw;
+    width: 30vw;
+    margin: 5vh auto;
+  }
+  #randomQuote{
+    margin-left: 10vw;
+  }
+  #clientsContainer {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto ;
+    justify-content: space-evenly;
+  }
+  .oneClient {
+    font-size: 30px;
+    text-align: center;
+    width: 25vw;
+    height: 15vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: grayscale(0);
+  }
+  #contactWrap{
+    margin-left: 8vw;
+    width: 84vw;
+    min-height: 84vh;
+    display: block;
   }
   #contactDatas{
     height: 64vh;
@@ -724,10 +808,42 @@ position: relative;
     height: 80vw;
     height: 40vw;
     margin-left: 0;
-    
   }
   #mapWrap iframe{
     width:100%;
     height: 100%;
+  }
+  
+  #quoteText {
+    background-size: 85vw 25vw;
+    width: 85vw;
+    margin:0;
+    font-size: 0.8em;
+  }
+  #quoteAutor{
+    font-size: 0.8em;
+  }
+}
+@media only screen and (max-width: 320px){
+  #quoteText {
+    background-size: 85vw 38vw;
+    font-size: 0.7em;
+  }
+  #quoteAutor{
+    font-size: 0.7em;
+  }
+  #secondPicTitle, #secondPicDiv{
+    display: none;
+  }
+  #slideWrap{
+    grid-template-areas:
+    "headPic "
+    "divPic";
+    grid-column-gap: 1vw;
+  }
+  .oneSliderDiv {
+    height: 50vw;
+    width: 50vw;
+    margin: 5vh auto;
   }
 }

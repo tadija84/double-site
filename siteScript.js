@@ -55,7 +55,7 @@ var quotes = [
   {
     oneQuote:
       "It is a pleasure to work with people who are dedicated to their work and who, due to personal traits, make your work responsibilities a pleasure.",
-    oneQuoteAutor: "ANĐELINA KUZMANOVIĆ, KNAUF INSULATION SOUTHERN BALKANS"
+    oneQuoteAutor: "ANĐELINA KUZMANOVIĆ, KNAUF INSULATION BALKANS"
   },
   {
     oneQuote:
@@ -332,3 +332,24 @@ function callNext(ij) {
     elem2.style.backgroundPosition = y;
   }
 })();
+
+document.getElementById("burgerMenu").addEventListener("click", showMenu);
+function showMenu() {
+  var mainH = document.getElementById("mainHeader");
+  var tabs = document.getElementById("tabs");
+  if (mainH.style.display == "none") {
+    mainH.style.display = "block";
+    tabs.style.display = "grid";
+    document.getElementById("linkNaslovna").addEventListener("click", hideTabs);
+    document.getElementById("linkONama").addEventListener("click", hideTabs);
+    document.getElementById("linkUsluge").addEventListener("click", hideTabs);
+    document.getElementById("linkKlijenti").addEventListener("click", hideTabs);
+    document.getElementById("linkKontakt").addEventListener("click", hideTabs);
+  } else {
+    mainH.style.display = "none";
+    tabs.style.display = "none";
+  }
+}
+function hideTabs() {
+  showMenu();
+}
