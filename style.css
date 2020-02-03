@@ -80,7 +80,7 @@ z-index: 9;
 font-weight: 800;
 }
 #linkNaslovna:hover,#linkONama:hover,#linkUsluge:hover,#linkKlijenti:hover,#linkKontakt:hover,#linkEngleski:hover{
-background-color:#a31b00;
+background-color: #C6084C;
 color: white;
   }
 a:link,a:visited  {
@@ -142,7 +142,7 @@ main {
 }
 
 #movingPart {
-  color: #a31b00;
+  color:  #C6084C;
   position: absolute;
   width: 70vw;
   left:15vw;
@@ -151,7 +151,7 @@ main {
   top: 0;
   text-align: center;
   font-weight: 900;
-  padding:0 6vw;
+  padding:3vh 6vw;
   background-image: url(./materijal/textbackround.png);
   background-size: 70vw 20vh;
   background-position: center;
@@ -171,7 +171,7 @@ main {
   font-family: myFont;
   font-size: 3em;
   height: 12vh;
-  border-bottom: solid #a31b00 4px;
+  border-bottom: solid  #C6084C 4px;
   margin-bottom: 3vh;
   font-weight: 900 !important;
 }
@@ -179,12 +179,9 @@ main {
   display: grid;
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   grid-template-columns: 50vw 50vw;
-  color: #a31b00;
-}
-#oNama{
-  color: #a31b00;
+  color:  #C6084C;
 }
 #aboutText{
   display: block;
@@ -202,7 +199,7 @@ main {
 #aboutWrap h1{
  margin-top: 10vh;
 margin-bottom: 5vh;
-border-bottom: solid 3px #a31b00;
+border-bottom: solid 3px  #C6084C;
 border-collapse: separate;
 border-spacing: 50px !important;
 }
@@ -227,7 +224,7 @@ border-spacing: 50px !important;
 #countsWrap{
   width: 50vw;
   height: 90vh;
-  background-color: rgba(163,27,0,0.7);
+  background-color: rgba(43, 43, 43, 0.7);
 }
 #numbsWrap{
   color: white;
@@ -265,7 +262,7 @@ font-size: 1.5em;
   margin: 8vh 0 0;
   grid-area: header;
   height: 10vh;
-  color: #a31b00;
+  color:  #C6084C;
 }
 #leftArrow { 
   grid-area: left;
@@ -355,7 +352,7 @@ font-size: 1.5em;
   grid-template-rows: 15vh 35vh;
   height: 100%;
   width: 100%;
-  background-color: rgba(163,27,0,0.7);
+  background-color: rgba(198, 8, 76, 0.7);
   color: white;
 }
 #quotesHeader{
@@ -363,6 +360,7 @@ font-size: 1.5em;
   margin-left: 8vw;
 }
 #randomQuote {
+  width: 100vw;
   display: grid;
   grid-template-rows: 23vh 12vh;
   grid-template-columns: 75vw;
@@ -377,7 +375,7 @@ font-size: 1.5em;
   background-position: center;
   padding: 2vw;
   width: 400px;
-  margin:0 auto;
+  margin:0 10vw;
   justify-content: center;
   align-items: center;
 }
@@ -391,7 +389,7 @@ font-size: 1.5em;
   background-color: rgba(0, 0, 0, 0.05);
   padding-top: 5vh;
   padding-bottom: 10vh;
-  color: #a31b00;
+  color:  #C6084C;
 }
 #klijentiNaslov{
   text-align: left;
@@ -534,7 +532,7 @@ font-size: 1.5em;
   background-repeat: no-repeat;
 }
 #close {
-  color: #a31b00;
+  color:  #C6084C;
   float: right;
   margin-right: 20vw;
   font-size: 4em;
@@ -552,7 +550,7 @@ font-size: 1.5em;
   position: relative;
   width: 100vw;
   min-height: 120vh;
-  background-color: rgb(163, 27, 0);
+  background-color: #2b2b2b;
   padding-top: 5vh;
 }
 #contactWrap{
@@ -615,6 +613,9 @@ font-size: 1.5em;
     grid-template-columns: 10vw 6vw 15vw 8vw 8vw 17vw 12vw 8vw 4vw;
     font-size: 0.8em;
   }
+  #oNama {
+    margin-bottom: 5vh;
+  }
   #aboutWrap{
     font-size: 0.8em;
     margin-bottom: 4vh;
@@ -638,6 +639,7 @@ font-size: 1.5em;
   }
   header{
     display: none;  
+    min-height: 56vh;
   }
   #tabs{
     display: none;
@@ -660,7 +662,7 @@ font-size: 1.5em;
     grid-area: firstLogo;
     width: 45vw;
     position: relative;
-    float: left;
+    background-size: 15vw 3vh;
     height: 10vh;
     margin: 0;
     right: 10vw;
@@ -671,6 +673,7 @@ font-size: 1.5em;
     width: 10vw;
     position: relative;
     height: 10vh;
+    background-size: 5vw 5vw;
     margin: 0;
     right: 10vw;
     justify-content: center;
@@ -681,11 +684,11 @@ font-size: 1.5em;
     width: 45vw;
     position: relative;
     height: 10vh;
+    background-size: 10vw 3vh;
     margin: 0;
     right: 10vw;
-    justify-content: center;
     float: left;
-    background-position: center;
+    background-position: 5vw center;
   }
   #linkNaslovna{
     grid-area: naslovna;
@@ -733,24 +736,25 @@ font-size: 1.5em;
   #aboutText{
     display: block;
     justify-content: space-around;
-    margin-left: 2vw; 
+    
   }
   #aboutWrap{
     width: 100%;
     min-height: 70vh;
-    padding: 3vw;
+    padding:0 3vw;
     display: grid;
     justify-content: space-between;
     color: black;
   }
   #numberCounter{
+    display: block;
+    position: relative;
     width: 100vw;
     font-size: 1.5em;
   }
   #countsWrap{
     width: 100vw;
     height: 90vh;
-    background-color: rgba(163,27,0,0.7);
   }
   #numbsWrap{
     color: white;
